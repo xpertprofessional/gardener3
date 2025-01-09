@@ -6,25 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>11 01 2025</title>
     <style>
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes backgroundPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 body {  
   font-family: "Courier New", serif;
-  color: rgb(9, 28, 62);
+  color: rgb(233, 255, 109, 0.764);
   background: linear-gradient(135deg, #ffffff, rgb(2, 70, 48), #ffffff);
+  background-size: 400% 400%;
   margin: 0;
   text-shadow: 8px 10px 4px rgba(150, 190, 50, 0.557), -8px -10px 4px rgba(181, 238, 220, 0.449);
   text-align: center;
   font-size: 40px;
   line-height: 0.7;
+  animation: backgroundPulse 10s ease infinite;
 }
+
 h1 {
     line-height: 1;
 }
+
 .container {
   position: relative;
   text-align: center;
-  color: rgb(9, 28, 62);
+  color: rgba(27, 17, 96, 0.764);
   margin: 20px auto;
+  animation: float 6s ease-in-out infinite;
 }
+
 .centered {
   position: absolute;
   top: 95%;
@@ -32,14 +50,22 @@ h1 {
   transform: translate(-50%, -50%);
   width: auto;
 }
+
 #img1 {
   filter: brightness(220%) opacity(0.5);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
+
 #img2 {
   filter: brightness(150%) opacity(0.5);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
+
+.fa-solid {
+  display: inline-block;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+}
+
 @media screen and (max-width: 500px) {
   body {
     font-size: 24px;
