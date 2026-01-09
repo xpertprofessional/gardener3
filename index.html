@@ -37,20 +37,18 @@ body {
   background: linear-gradient(135deg, #1a1a1a, rgb(100, 100, 120), #1a1a1a);
   background-size: 400% 400%;
   margin: 0;
-  text-shadow: 8px 10px 4px rgba(60, 60, 80, 0.7), -8px -10px 4px rgba(180, 180, 200, 0.5);
+
   text-align: center;
   font-size: 40px;
   line-height: 0.7;
 }
 h1 {
     line-height: 1;
+  font-weight: 100; 
   margin: 5px 0; 
   transform: rotate(-15deg);
 }
-h2 {
-    line-height: 1;
-  font-size: inherit;
-  margin: 5px 0; 
+h1.reverse {
   transform: rotate(15deg);
 }
 .container {
@@ -69,14 +67,20 @@ h2 {
   width: auto;
 }
 #img1 {
-  filter: brightness(220%) opacity(0.5) grayscale(100%) blur(0.5px);  aspect-ratio:1/1; object-fit:cover;
+  filter: brightness(220%) opacity(0.5) grayscale(100%) blur(0.5px);
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  width: 100%; 
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-transform: skewX(15deg) rotate(5deg) scale(1.4);
+  transform: skewX(15deg) rotate(5deg) scale(1.4);
 }
 #img2 {
   filter: brightness(150%) opacity(0.5) grayscale(100%); 
+  width: 100%; 
+  aspect-ratio: 16/9; 
+  object-fit: contain; 
   border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%;
-transform: skewX(-15deg) rotate(-5deg) scale(1.4);
+  transform: skewX(-15deg) rotate(-5deg) scale(1.4);
 }
 .fa-solid {
   display: inline-block;
@@ -105,14 +109,15 @@ transform: skewX(-15deg) rotate(-5deg) scale(1.4);
 <body>
     <h1></h1></p><br><br>
 <div class="container">
-    <img id="img1" src="13e05e77-78db-4c0a-bbb1-1d6f4ee3ba27.JPG" style="width:25%">
+    <img id="img1" src="13e05e77-78db-4c0a-bbb1-1d6f4ee3ba27.JPG">
     <p><div class="centered"><h1> this is not her. <br>i do not know, bye<br> <i class="fa-solid fa-microphone-lines"></i> <i class="fa-solid fa-laptop"></i></div></p></h1>
 </div>
 <br><br><br><br>
 <div class="container">
-    <img id="img2" src="Screenshot 2026-01-08 at 14.04.49.png" width="25%">
-    <p><div class="centered"><h2> uma<br><i class="fa-solid fa-compact-disc"></i></div></p></h2> 
+    <img id="img2" src="IMG_9289.jpg">
+    <p><div class="centered"><h1 class="reverse"> uma<br><i class="fa-solid fa-compact-disc"></i></div></p></h1> 
 </div>
+<br>
 <br>
 <br>
 <br>
@@ -127,25 +132,5 @@ transform: skewX(-15deg) rotate(-5deg) scale(1.4);
 <br>
 <br>
 <br>
-<script>
-function navigateToEvent(filename) {
-    if (filename && filename !== '') {
-        window.location.href = filename;
-    }
-}
-// Auto-select current page in dropdown
-window.addEventListener('DOMContentLoaded', function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'porridge_index.html';
-    const select = document.getElementById('event-select');
-    if (select) {
-        for (let option of select.options) {
-            if (option.value === currentPage) {
-                option.selected = true;
-                break;
-            }
-        }
-    }
-});
-</script>
 </body>
 </html>
